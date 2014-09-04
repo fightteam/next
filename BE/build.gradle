@@ -1,0 +1,21 @@
+
+configure(allprojects) {
+
+    group "org.fightteam.next"
+
+   
+}
+
+
+configure(subprojects) { subproject ->
+    
+}
+
+
+configure(rootProject) {
+    apply from: "${gradleScriptDir}/ide.gradle"
+
+  	description = "Next Exporter"
+
+}
+

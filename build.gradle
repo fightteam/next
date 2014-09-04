@@ -1,0 +1,37 @@
+// 一些简单的配置参数
+// -----------------------------
+// jar包版本依赖在gradle.properties中管理
+ext {
+    gradleScriptDir = "${rootProject.projectDir}/gradle"
+}
+// 所有项目共同的配置
+// -----------------------
+// 项目编译参数设置、依赖等等
+configure(allprojects) {
+
+    group "org.fightteam.next"
+
+   
+}
+
+// 子项目共同的配置
+// ----------------------
+// 主要是javadoc的生成
+configure(subprojects) { subproject ->
+    
+}
+
+
+// 根项目配置
+// ---------------------
+// 主要是文档等的生成。
+configure(rootProject) {
+    apply from: "${gradleScriptDir}/ide.gradle"
+
+  	description = "Next Exporter"
+
+}
+
+task wrapper(type:Wrapper){
+	gradleVersion= '2.0'
+}
