@@ -4,5 +4,3 @@
 *.ipr
 *.iws
 build/
-*.bat
-*.log
