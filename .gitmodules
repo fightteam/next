@@ -1,0 +1,6 @@
+[submodule "fe"]
+	path = fe
+	url = https://github.com/fightteam/next-fe.git
+[submodule "be"]
+	path = be
+	url = https://github.com/fightteam/next-be.git
