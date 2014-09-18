@@ -17,7 +17,10 @@ RUN \
 	wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
 	tar xvzf apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
 	rm apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
-	mv apache-tomcat-${TOMCAT_MINOR_VERSION} /usr/local/tomcat
+	mv apache-tomcat-${TOMCAT_MINOR_VERSION} /usr/local/tomcat && \
+	rm -rf /usr/local/tomcat/webapps/*
+
+VOLUME ["/usr/local/tomcat/webapps"]
 
 # Install MySQL.
 RUN \
