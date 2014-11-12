@@ -1,0 +1,29 @@
+redis:
+  build: docker/redis
+mysql:
+  build: docker/mysql
+  environment:
+    # 定义 mysql 的 root 的 密码
+    MYSQL_ROOT_PASSWORD: "root"
+  links:
+    - redis:redis
+
+adminTomcat:
+  build: docker/tomcat
+  links:
+    - redis:redis
+    - mysql:mysql
+
+portalTomcat:
+  build: docker/tomcat
+  links:
+    - redis:redis
+    - mysql:mysql
+
+nginx:
+  image: docker/nginx
+  ports:
+    - "80:80"
+  links:
+    - adminTomcat:admin
+    - portalTomcat:portal

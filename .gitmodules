@@ -1,6 +1,6 @@
-[submodule "fe"]
-	path = fe
+[submodule "front-end"]
+	path = front-end
 	url = https://github.com/fightteam/next-fe.git
-[submodule "be"]
-	path = be
+[submodule "back-end"]
+	path = back-end
 	url = https://github.com/fightteam/next-be.git
